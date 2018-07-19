@@ -1,34 +1,26 @@
 """
-newton_cotes.py
-molssi workshop example
-
-Handles the primary functions
+This file contains the implementation of the trapezoidal rule
 """
 
+import numpy as np
 
-def canvas(with_attribution=True):
-    """
-    Placeholder function to show example docstring (NumPy format)
-
-    Replace this function and doc string for your own project
-
+def trapz(x, f):
+    """ 
+    Compute a 1D definite integral using the trapezoidal rule
     Parameters
     ----------
-    with_attribution : bool, Optional, default: True
-        Set whether or not to display who the quote is from
-
+    f : function
+        User defined function.
+    x : numpy array
+        Integration domain.
     Returns
     -------
-    quote : str
-        Compiled string including quote and optional attribution
-    """
-
-    quote = "The code is but a canvas to our imagination."
-    if with_attribution:
-        quote += "\n\t- Adapted from Henry David Thoreau"
-    return quote
-
-
-if __name__ == "__main__":
-    # Do something if this file is invoked on its own
-    print(canvas())
+    I : float
+        Integration result.
+    """   
+    a = x[0]
+    b = x[1]
+    ya = f(a)
+    yb = f(b)
+    I = (b-a) * (ya + yb) / 2
+    return I
