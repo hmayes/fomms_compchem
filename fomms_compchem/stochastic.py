@@ -1,3 +1,5 @@
+import numpy as np
+
 def monte_2d(f, v, domain, trials):
     """
     Compute area of circle using Monte Carlo sampling
